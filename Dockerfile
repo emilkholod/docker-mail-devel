@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 MAINTAINER antespi@gmail.com
 
@@ -17,6 +17,7 @@ RUN set -x; \
         postfix \
         dovecot-core \
         dovecot-imapd \
+        dovecot-pop3d \
         dovecot-lmtpd \
         rsyslog \
         iproute2 \
@@ -42,7 +43,7 @@ ADD entrypoint /usr/local/bin/
 RUN chmod a+rx /usr/local/bin/entrypoint
 
 VOLUME ["/var/mail"]
-EXPOSE 25 143 993
+EXPOSE 25 110 143 993 995
 
 ENTRYPOINT ["/usr/local/bin/entrypoint"]
 CMD ["tail", "-fn", "0", "/var/log/mail.log"]
