@@ -39,7 +39,7 @@ any email to any email address
 ## GitLab-CI integration as service
 ```yaml
 services:
-  - name: virtua-sa/docker-mail-devel
+  - name: virtuasa/docker-mail-devel
     alias: mail
 ```
 
