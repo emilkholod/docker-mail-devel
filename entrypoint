@@ -115,6 +115,21 @@ fi
 if [ -n "$MAIL_ADDRESS" ]; then
     _account_add "$MAIL_ADDRESS" "$MAIL_PASS"
     _add_line "$MAIL_ADDRESS" "/$MAIL_ADDRESS/ $MAIL_ADDRESS" /etc/postfix/virtual_regexp
+    
+    _account_add "test_admin@test.com" "test"
+    _add_line "test_admin@test.com" "/test_admin@test.com/ test_admin@test.com" /etc/postfix/virtual_regexp
+    
+    _account_add "test_alpha@test.com" "test"
+    _add_line "test_alpha@test.com" "/test_alpha@test.com/ test_alpha@test.com" /etc/postfix/virtual_regexp
+
+    _account_add "test_beta@test.com" "test"
+    _add_line "test_beta@test.com" "/test_beta@test.com/ test_beta@test.com" /etc/postfix/virtual_regexp
+
+    _account_add "test_gamma@test.com" "test"
+    _add_line "test_gamma@test.com" "/test_gamma@test.com/ test_gamma@test.com" /etc/postfix/virtual_regexp
+
+    _account_add "test_delta@test.com" "test"
+    _add_line "test_delta@test.com" "/test_delta@test.com/ test_delta@test.com" /etc/postfix/virtual_regexp
 fi
 
 # Create debug account

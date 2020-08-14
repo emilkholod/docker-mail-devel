@@ -2,11 +2,10 @@ version: '2'
 
 services:
   imap:
-    # Uncomment this for build image in local
-    # build:
-    #   context: .
-    image: antespi/docker-imap-devel:latest
-    container_name: imap
+    build:
+      context: ./docker-mail-devel/
+    # Uncomment to use image
+    # image: antespi/docker-imap-devel:latest
     ports:
     - "25:25"
     - "143:143"
